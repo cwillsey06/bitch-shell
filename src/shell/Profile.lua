@@ -1,6 +1,6 @@
-local Settings = require("src/common/Settings")
+local Settings = require("src/shell/Settings")
 local util = require("src/common/util")
-local Enum = util.get("datatypes","Enum")
+local Enum = util.get("Enum")
 
 local module = {}
 module = {

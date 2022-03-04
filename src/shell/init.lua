@@ -15,7 +15,7 @@ local module = {}
 module.__index = module
 
 module._customLibraryCache = {}
-module._inbuiltShellSystem = util.get("builtin")
+module._inbuiltShellSystem = require("src/shell/Profile")
 
 local function getCommand(raw)
 	return raw:match("^([%w]+)")
