@@ -2,14 +2,14 @@
 -- author: mao06
 -- summary: requires and caches utilities and arrays
 
-local module = {}
-module.__index = module
-module._cached = {}
+local util = {}
+util.__index = util
+util._cached = {}
 
 local Settings = require("src/shell/Settings")
 local Enum = require("src/common/Enum")
 
-function module.write(writeType, string)
+function util.write(writeType, string)
   local bright = ''
   if (Settings.BrightColors) then
     bright = Enum.Colors.bright
@@ -22,29 +22,21 @@ function module.write(writeType, string)
   end
 end
 
-function module.get(Module)
-    local localModule = Module or Type
-    if not (module._cached[localModule]) then
-      table.insert(module._cached,localModule)
-      
-      local namespace
-      if (Module) then
-        namespace = ("src/common/%s"):format(Module)
-      else
-        namespace = ''
-      end
-
-      xpcall(function()
-        module._cached[localModule] = require(namespace.. localModule)
+function util.get(module)
+  local _dir = 'src/common/'
+  local required = util._cached[module]
+  if not required then
+    xpcall(function()
+        required = require(_dir.. module)
       end,
-      function(code)
-        module.write(Enum.WriteType.Error,code)
-        table.remove(module._cached,module._cached[localModule])
+      function(x)
+        module.write(Enum.WriteType.Error, x:lower())
       end)
+    
+    util._cached[module] = required
+  end
 
-    end
-
-    return module._cached[localModule]
+  return required
 end
 
-return module
+return util
