@@ -5,17 +5,17 @@
 local Settings = require("src/shell/Settings")
 local util = require("src/common/util")
 
-local Enum = util.get("datatypes","Enum")
+local Enum = util.get("Enum")
 
-local co = util.get("functions","co")
-local split = util.get("functions","split")
-local wait = util.get("functions","wait")
+local co = util.get("co")
+local split = util.get("split")
+local wait = util.get("wait")
 
 local module = {}
 module.__index = module
 
 module._customLibraryCache = {}
-module._inbuiltShellSystem = util.get("commandLibraries","builtin")
+module._inbuiltShellSystem = util.get("builtin")
 
 local function getCommand(raw)
 	return raw:match("^([%w]+)")
