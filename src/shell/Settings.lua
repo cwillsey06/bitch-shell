@@ -1,6 +1,6 @@
 local settings = {}
 
-local Enum = require("bitch-shell/libraries/datatypes/Enum")
+local Enum = require("src/common/Enum")
 
 settings.Name = "bitch-shell"
 settings.Version = "1.0.3"

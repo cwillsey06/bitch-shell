@@ -1,5 +1,5 @@
-local Settings = require("bitch-shell/Settings")
-local util = require("bitch-shell/util")
+local Settings = require("src/common/Settings")
+local util = require("src/common/util")
 local Enum = util.get("datatypes","Enum")
 
 local module = {}
@@ -34,7 +34,7 @@ module = {
     loadLibrary = {
       info = "Loads a commandLibrary into memory";
       invoke = function(self,args)
-        local lib = require("bitch-shell/libraries/commandLibraries/".. args[1])
+        local lib = require("addons/".. args[1])
         table.insert(self._customLibraryCache,lib)
       end;
     };

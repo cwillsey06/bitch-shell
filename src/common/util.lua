@@ -6,8 +6,8 @@ local module = {}
 module.__index = module
 module._cached = {}
 
-local Settings = require("bitch-shell/Settings")
-local Enum = require("bitch-shell/libraries/datatypes/Enum")
+local Settings = require("src/shell/Settings")
+local Enum = require("src/common/Enum")
 
 function module.write(writeType, string)
   local bright = ''
@@ -29,7 +29,7 @@ function module.get(Type, Module)
       
       local namespace
       if (Module) then
-        namespace = ("bitch-shell/libraries/%s"):format(Type.."/")
+        namespace = ("src/common/%s"):format(Type.."/")
       else
         namespace = ''
       end

@@ -2,8 +2,8 @@
 -- author: mao06
 -- summary: main module to initialize and run the entire shell
 
-local Settings = require("bitch-shell/Settings")
-local util = require("bitch-shell/util")
+local Settings = require("src/shell/Settings")
+local util = require("src/common/util")
 
 local Enum = util.get("datatypes","Enum")
 

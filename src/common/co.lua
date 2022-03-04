@@ -1,5 +1,5 @@
 local module = {}
-local util = require("bitch-shell/util")
+local util = require("src/common/util")
 local wait = util.get("functions","wait")
 module = {
   spawn = function(f,...) coroutine.wrap(f)(...); end;

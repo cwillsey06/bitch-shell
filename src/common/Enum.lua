@@ -2,7 +2,7 @@ local Enum = {}
 Enum.__index = Enum
 
 -- local util = require("bitch-shell/util")
-local colors = require("bitch-shell/libraries/datatypes/colors")
+local colors = require("src/common/colors")
 Enum.Colors = colors
 
 -- writeTypes
