@@ -22,14 +22,14 @@ function module.write(writeType, string)
   end
 end
 
-function module.get(Type, Module)
+function module.get(Module)
     local localModule = Module or Type
     if not (module._cached[localModule]) then
       table.insert(module._cached,localModule)
       
       local namespace
       if (Module) then
-        namespace = ("src/common/%s"):format(Type.."/")
+        namespace = ("src/common/%s"):format(Module)
       else
         namespace = ''
       end
