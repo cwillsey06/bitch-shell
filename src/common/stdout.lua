@@ -5,6 +5,10 @@
 local Settings = require('src/shell/Settings')
 local colors = require('src/common/colors')
 
+function pack(arg, sep)
+    return string.format(string.rep('%s'.. (sep or ' '), #arg), unpack(arg))
+end
+
 local stdout = {}
 stdout.__index = stdout
 
@@ -17,13 +21,13 @@ end
 function stdout.print(...)
     io.write(colors[Settings.defaultColor]..
     colors[Settings.brightColorsAlways]..
-    stdout.write(...).. '/n')
+    stdout.write(pack({...}, '\n')))
 end
 
 function stdout.write(...)
     io.write(colors[Settings.defaultColor]..
     colors[Settings.brightColorsAlways]..
-    string.pack('=A'.. #{...}, ...))
+    pack({...}))
 end
 
 return stdout

@@ -3,27 +3,27 @@
 -- 2022-03-07 [22:47]
 
 local Settings = {
-    Name = "bitch-shell";
+    name = "bitch-shell";
     shortName = "bs";
     description = '';
 
 --  Aesthetic
-    Prefix = "$";
-    DefaultColor = "cyan";
-    BrightColorsAlways = true;
+    prefix = "$";
+    defaultColor = "cyan";
+    brightColorsAlways = true;
 
 --  Behavior
-    EnableTaskResumption = false;
+    enableTaskResumption = false;
     -- enables task suspension and resumption
 
-    TaskSuspendBehavior = 'Kill';
+    taskSuspendBehavior = 'Kill';
     -- suspend: Attempt to freeze the task to resume later.
     -- Kill: Ends task immediately
 
-    TaskSuspendTimeout = 5;
+    taskSuspendTimeout = 5;
     -- In seconds (Any value >= 0 will never suspend (Not recommended))
 
-    EnableCountdownTimer = false;
+    enableCountdownTimer = false;
     -- (attempts to) Display a task suspension timer beneath the input line
 
 --  Miscellaneous
