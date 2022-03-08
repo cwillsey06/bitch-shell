@@ -36,7 +36,7 @@ end
 function shell:Start()
     self.active = true
     
-    stdout.write(Settings.Name)
+    stdout.write(Settings.name)
 
     while self.active do
         stdout.write(Settings.prefix)
