@@ -5,6 +5,7 @@
 local Settings = {
     Name = "bitch-shell";
     shortName = "bs";
+    description = '';
 
 --  Aesthetic
     Prefix = "$";
