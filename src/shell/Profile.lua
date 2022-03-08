@@ -2,8 +2,7 @@
 -- Coltrane Willsey
 -- 2022-03-07 [22:47]
 
-local common = require('src/common/init')
-local task = require(common.task)
+local task = require('src/common/task')
 
 local sh_profile = {
     echo = {

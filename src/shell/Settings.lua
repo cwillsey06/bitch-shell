@@ -3,12 +3,12 @@
 -- 2022-03-07 [22:47]
 
 local Settings = {
-    Name = "Source-Controlled Lua Shell";
-    shortName = "sclush";
+    Name = "bitch-shell";
+    shortName = "bs";
 
 --  Aesthetic
     Prefix = "$";
-    DefaultColor = "white";
+    DefaultColor = "cyan";
     BrightColorsAlways = true;
 
 --  Behavior
