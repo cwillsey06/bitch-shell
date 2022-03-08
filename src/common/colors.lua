@@ -3,7 +3,7 @@ local tostring = tostring
 local setmetatable = setmetatable
 local schar = string.char
 
-module 'bitch-shell/libraries/datatypes/colors'
+module 'src/common/colors'
 
 local colormt = {}
 
