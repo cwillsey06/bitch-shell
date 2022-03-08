@@ -7,10 +7,8 @@
 --]]
 
 local Settings = require('src/shell/Settings')
-
-local common = require('src/common/init')
-local caretaker = require(common.caretaker)
-local stdin, stdout = require(common.stdin), require(common.stdout)
+local caretaker = require('src/common/caretaker')
+local stdin, stdout = require('src/common/stdin'), require('src/common/stdout')
 
 local shell = {}
 shell.__index = shell

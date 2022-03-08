@@ -9,8 +9,7 @@
 local task = {}
 task.__index = task
 
-local common = require('src/common/init')
-local caretaker = require(common.caretaker)
+local caretaker = require('src/common/caretaker')
 
 function task:Invoke()
     return select(2, coroutine.resume(self.funct))
