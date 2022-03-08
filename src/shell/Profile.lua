@@ -7,7 +7,7 @@ local task = require('src/common/task')
 local sh_profile = {
     echo = {
         meta = 'echos $args to console';
-        task = task.new(function()
+        task = task.new(function(self, ...)
             return "hello"
         end);
     }
