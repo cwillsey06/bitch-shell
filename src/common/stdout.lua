@@ -13,7 +13,7 @@ function stdout.encode(raw, encoding)
     io.write(colors[encoding['color'] or Settings.defaultColor]..
     colors[(encoding['bright'] or Settings.brightColorsAlways) and 'bright']..
     (encoding['dim'] and colors.dim or '')..
-    raw)
+    raw.. colors.reset)
 end
 
 function stdout.print(...)
