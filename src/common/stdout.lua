@@ -20,7 +20,7 @@ end
 
 function stdout.print(...)
     io.write(colors[Settings.defaultColor]..
-    colors[Settings.brightColorsAlways]..
+    (Settings.brightColorsAlways and colors.bright or '')..
     pack({...}, '\n'))
 end
 
