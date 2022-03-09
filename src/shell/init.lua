@@ -20,12 +20,12 @@ function shell:invoke(input)
             stdout.print(command.task:Invoke(self, stdin.getArgs(input)))
         end,
         function(x)
-            stdout.encode(("could not execute command: %s"):format(x), 'red')
+            stdout.encode(("%s: could not execute command: %s"):format(Settings.shortName, x), {color = 'red'})
         end)
     elseif input:match("^%s*$") then
         return
     else
-        stdout.print(Settings.shortName, input, "command not found...")
+        stdout.encode(Settings.shortName, input, "command not found...", {color = 'white', dim = true})
     end
 end
 
