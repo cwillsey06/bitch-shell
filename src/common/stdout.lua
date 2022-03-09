@@ -4,10 +4,7 @@
 
 local Settings = require('src/shell/Settings')
 local colors = require('src/common/colors')
-
-function pack(arg, sep)
-    return string.format(string.rep('%s'.. (sep or ' '), #arg), unpack(arg))
-end
+local pack = require('src/common/pack')
 
 local stdout = {}
 stdout.__index = stdout
@@ -15,7 +12,7 @@ stdout.__index = stdout
 function stdout.encode(raw, encoding)
     io.write(colors[encoding['color'] or Settings.defaultColor]..
     colors[(encoding['bright'] or Settings.brightColorsAlways) and 'bright']..
-    colors[(encoding['dim']) and 'dim']..
+    (encoding['dim'] and colors.dim or '')..
     raw)
 end
 

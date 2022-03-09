@@ -2,7 +2,7 @@
 -- Coltrane Willsey
 -- 2022-03-07 [23:24]
 
-return function(str, sep)
+function split(str, sep)
 	if not (sep) then
 		sep = "%s"
 	end
@@ -12,3 +12,5 @@ return function(str, sep)
 	end
 	return t
 end
+
+return split
