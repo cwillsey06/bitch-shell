@@ -28,4 +28,8 @@ function stdout.write(...)
     pack({...}))
 end
 
+function stdout.nl()
+    stdout.print('')
+end
+
 return stdout
