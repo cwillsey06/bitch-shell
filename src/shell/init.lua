@@ -38,10 +38,14 @@ function shell:Start()
     
     stdout.write(Settings.name)
 
-    while self.active do
-        stdout.write(Settings.prefix)
-        self:invoke(io.read())
-    end
+    self._runner = coroutine.create(function()
+        while self.active do
+            stdout.write(Settings.prefix)
+            self:invoke(io.read())
+        end
+    end)
+
+    coroutine.resume(self._runner)
 end
 
 function shell.new()
