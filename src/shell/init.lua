@@ -25,7 +25,7 @@ function shell:invoke(input)
     elseif input:match("^%s*$") then
         return
     else
-        stdout.write(Settings.shortName, input, "command not found...")
+        stdout.print(Settings.shortName, input, "command not found...")
     end
 end
 
@@ -36,7 +36,7 @@ end
 function shell:Start()
     self.active = true
     
-    stdout.write(Settings.name)
+    stdout.print(Settings.name)
 
     self._runner = coroutine.create(function()
         while self.active do
