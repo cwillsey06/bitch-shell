@@ -42,7 +42,7 @@ function shell:Start()
     self._runner = coroutine.create(function()
         while self.active do
             stdout.write(Settings.prefix)
-            self:invoke(self, io.read())
+            self:invoke(io.read())
         end
     end)
 
