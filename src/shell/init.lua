@@ -25,7 +25,8 @@ function shell:invoke(input)
     elseif input:match("^%s*$") then
         return
     else
-        stdout.encode(Settings.shortName, input, "command not found...", {color = 'white', dim = true})
+        stdout.encode(("%s: command '%s' not found..."):format(Settings.shortName, input), {color = 'white', dim = true})
+        stdout.nl()
     end
 end
 
