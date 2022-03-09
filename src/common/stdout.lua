@@ -21,7 +21,7 @@ end
 function stdout.print(...)
     io.write(colors[Settings.defaultColor]..
     colors[Settings.brightColorsAlways]..
-    stdout.write(pack({...}, '\n')))
+    pack({...}, '\n'))
 end
 
 function stdout.write(...)
