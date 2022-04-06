@@ -10,10 +10,10 @@ local sh_profile = {}
 sh_profile = {
     help = {
         meta = 'echos all commands or $arg1 meta to console';
-        task = task.new(function(self,...)
-            local arg1 = {...}[1]
-            if arg1 then
-                return arg1 .." : ".. sh_profile[arg1].meta
+        task = task.new(function(self, ...)
+            local arg = {...}
+            if arg[1] then
+                return arg[1] .." : ".. sh_profile[arg[1]].meta
             else
                 local t = {}
                 local i = 1
